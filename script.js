@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
         html2canvas(characterContainer).then(canvas => {
             const link = document.createElement('a');
             link.href = canvas.toDataURL('image/png');
-            link.download = 'My-CROC.png';
+            link.download = 'My-COFFEE.png';
             link.click();
         });
     });
