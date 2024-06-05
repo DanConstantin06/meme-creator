@@ -1,0 +1,138 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+#background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1; /* Ensure the video stays in the background */
+    object-fit: cover; /* Cover the whole background */
+}
+
+#content {
+    position: relative;
+    z-index: 1; /* Ensure the content is above the video */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+#character-container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+
+#character {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+#buttons-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.custom-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: #ffffff; /* White background for categories */
+    color: black;
+    width: 100%;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.custom-btn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+}
+
+.custom-btn:active {
+    background-color: rgba(0, 0, 0, 0.2);
+    transform: scale(0.95);
+}
+
+.applied-item {
+    position: absolute;
+}
+
+.category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    width: 100%;
+    background-color: #ffffff; /* White background for categories */
+    border: 1px solid #ccc; /* Border for categories */
+    border-radius: 10px; /* Rounded corners for categories */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for categories */
+}
+
+.category h3 {
+    margin: 10px 0;
+    font-size: 20px; /* Increase font size for titles */
+    color: #333; /* Darker color for titles */
+    font-weight: bold; /* Make titles bold */
+    text-align: center;
+}
+
+.category .items {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.item {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: #ccc;
+}
+
+#categories-container {
+    margin-top: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}

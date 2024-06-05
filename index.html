@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CROC Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <video id="background-video" autoplay loop muted>
+        <source src="/images/background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div id="content">
+        <div id="container">
+            <div id="character-container">
+                <img src="character-base.png" id="character" alt="Main Character">
+                <div id="buttons-container">
+                    <button id="reset-btn" class="custom-btn">Reset</button>
+                    <button id="random-btn" class="custom-btn">Random</button>
+                    <button id="save-btn" class="custom-btn">Save</button>
+                    <a href="https://crocsolana.org"><button class="custom-btn">CROC Website</button></a>
+                </div>
+            </div>
+            <div id="categories-container"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
