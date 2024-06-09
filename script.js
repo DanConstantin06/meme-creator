@@ -98,13 +98,36 @@ document.addEventListener('DOMContentLoaded', () => {
             itemImg.setAttribute('data-category', category);
             itemImg.setAttribute('data-item', item);
             itemImg.style.zIndex = zIndex;
-            itemImg.addEventListener('click', () => applyItem(category, itemImg.src, zIndex));
+            itemImg.draggable = true; // Make item draggable
+            itemImg.addEventListener('dragstart', dragStart);
+            itemImg.addEventListener('dragend', dragEnd);
 
             itemsDiv.appendChild(itemImg);
         });
 
         categoryDiv.appendChild(itemsDiv);
         document.getElementById('categories-container').appendChild(categoryDiv);
+    }
+
+    function dragStart(event) {
+        event.dataTransfer.setData('text/plain', event.target.src);
+        event.target.classList.add('dragging');
+    }
+
+    function dragEnd(event) {
+        event.target.classList.remove('dragging');
+    }
+
+    function allowDrop(event) {
+        event.preventDefault();
+    }
+
+    function drop(event) {
+        event.preventDefault();
+        const src = event.dataTransfer.getData('text/plain');
+        const category = event.target.getAttribute('data-category');
+        const zIndex = event.target.style.zIndex;
+        applyItem(category, src, zIndex);
     }
 
     function applyItem(category, src, zIndex) {
